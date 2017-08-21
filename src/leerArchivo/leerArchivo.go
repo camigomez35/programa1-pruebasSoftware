@@ -1,13 +1,9 @@
-package main
+package leerArchivo
 
 import (
     "fmt"
     "io/ioutil"
 )
-
-func main(){
-  abrirArchivo("./src/leerArchivo/archivo.txt")
-}
 
 func abrirArchivo(s_nombreArchivo string) string{
   dat, err := ioutil.ReadFile(s_nombreArchivo)
