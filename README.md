@@ -1,7 +1,7 @@
 # Contador de líneas de código
 ### Pruebas de Software 2017-2
 #### Universidad de Antioquia
-#### Testing CircliCI ![Estado](https://circleci.com/gh/camigomez35/programa2-pruebasSoftware.svg?style=shield&circle-token=8cc112e65a14c168467af4b8367ccad49bcce930)
+#### Estado de las pruebas ![Estado](https://circleci.com/gh/camigomez35/programa2-pruebasSoftware.svg?style=shield&circle-token=8cc112e65a14c168467af4b8367ccad49bcce930)
 
 Este proyecto está basado en el "Personal Software Process (PSP) for Engineers: Part I"
 
