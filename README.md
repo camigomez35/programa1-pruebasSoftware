@@ -15,6 +15,7 @@ Diseñar programa que cuente la cantidad de líneas del código cumpliento está
 
 ### Estándar de conteo
 - Se contarán las líneas de código por partes (Lineas, métodos, clases).
+- Cada librería en el import cuenta como una linea de código.º
 - Tabla discriminante
 
 **_Programa 1_**
@@ -34,7 +35,7 @@ Cuando acabe, toma apunte de los resultados (En realidad me demoré 6 horas)
 - Las variables iniciarán en minúscula y palabras adicionales inician con mayúscula.
 - Las variables deben ser nombradas con un identificador inicial según su tipo.
 ```go
-var i_contador int := 14
+i_contador int := 14
 ```
 El identificador según el tipo se define a continuación
 
@@ -44,15 +45,16 @@ El identificador según el tipo se define a continuación
 | Int | i | i_edad |
 | Boolean | b | b_existe |
 | []anyType | a[tipo] | ai_edades |
-
+| Testing | t | t_test |
+| File | f | f_code |
 
 - Empiezan con la palabra reservada **var**, seguido del nombre de la variable, su tipo y por último su valor inicial.
 ```go
-var s_nombre string := "Sakura"
+s_nombre string := "Sakura"
 ```
 - No deben haber varias variables en una misma línea
 ```go
-var i_inicio, i_contador int := 1, 0
+i_inicio, i_contador int := 1, 0
 ```
 - No se terminan las lineas en **;**
 - Las variables se deben declarar con **:=**
@@ -63,7 +65,7 @@ var i_inicio, i_contador int := 1, 0
 ```go
 func calcularLineas() int {}
 ```
-- Empiezan con la palabra reservada **func**, luego el nombre, los parámetros de entrada, a continuación el tipo de dato que retorna y por último las llaves. 
+- Empiezan con la palabra reservada **func**, luego el nombre, los parámetros de entrada, a continuación el tipo de dato que retorna y por último las llaves.
 ```go
 func calcularMedida(i_alto int, i_ancho int) int {}
 ```
@@ -71,10 +73,15 @@ func calcularMedida(i_alto int, i_ancho int) int {}
 ```go
 func calcularMedidas(i_alto int, i_ancho int) (int,int) {}
 ```
-- Se pueden tener un número indeterminado de parámetros o argumentos en la función func 
+- Se pueden tener un número indeterminado de parámetros o argumentos en la función func
 ```go
 sum(nums ...int) {}
 ```
+- Las funciones de testing deben iniciar por la palabra 'Test'.
+```
+ func TestAverage(t_test *testing.T)
+```
+
 #### Para estructuras:
 _(En go no hay clases)_
 - Los nombres de las estructuras comienzan en minúscula, en igual caso para nombres compuestos
@@ -87,6 +94,6 @@ type contador struct {}
 - Debe haber uno y solo un atributo por línea en el contenido de la estructura
 
 > ADICIONAL:
-> - La llave que abre una porcion de codigo debe iniciar en la misma linea de la declaración de un método o estructura 
-> - La primera línea de código debe ser package, seguido del nombre 
-> - Los imports deben ser únicos y uno seguido del otro
+> - La llave que abre una porcion de codigo debe iniciar en la misma linea de la declaración de un método o estructura
+> - La primera línea de código debe ser package, seguido del nombre
+> - Los imports deben ser únicos
