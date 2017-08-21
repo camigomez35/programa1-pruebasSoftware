@@ -5,18 +5,15 @@ import (
     "io/ioutil"
 )
 
-func check(e error) {
-    if e != nil {
-        panic(e)
-    }
-}
-
 func main(){
+  abrirArchivo("./src/leerArchivo/archivo.txt")
 }
 
-func abrirArchivo() string{
-  dat, err := ioutil.ReadFile("archivo.txt")
-  check(err)
+func abrirArchivo(s_nombreArchivo string) string{
+  dat, err := ioutil.ReadFile(s_nombreArchivo)
+  if err != nil {
+      return ""
+  }
   fmt.Print(string(dat))
   return string(dat)
 }
