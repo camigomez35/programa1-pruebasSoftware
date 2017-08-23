@@ -1,4 +1,4 @@
-package leerArchivo
+package testNilton
 
 import (
 	"testing"
@@ -10,7 +10,11 @@ func TestEmpty(t *testing.T ){
 	actual := validateCode()
 	fmt.Println(actual)
 	fmt.Println(expected)
-	/*if actual != expected {
-		//t.Errorf("Test failed, expected: '%s', got:  '%s'", expected, actual)
-	}*/
+}
+
+func TestRead(t *testing.T){
+	res:=readFile()
+	if res!=true {
+		t.Errorf("Test failed, expected: true, got: false")
+	}
 }

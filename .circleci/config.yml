@@ -22,4 +22,5 @@ jobs:
       - checkout
 
       # specify any bash command here prefixed with `run: `
-      - run: go test -v ./src/leerArchivo/nilton_test.go
+      - run: go test -v ./src/leerArchivo/
+
