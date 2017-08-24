@@ -27,3 +27,9 @@ func encontrarMetodos() []int {
 	}
 	return lineas
 }
+
+func conteoDeLineas() int {
+	numeroLineas:=0
+	return numeroLineas
+
+}

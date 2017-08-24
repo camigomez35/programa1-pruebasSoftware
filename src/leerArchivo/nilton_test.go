@@ -25,3 +25,10 @@ func TestEncontrarMetodos(t *testing.T){
 		t.Errorf("En el archivo no hay metodos")
 	}
 }
+
+func TestValidarFuncPrimeraPalabra(t *testing.T)  {
+	valor:=conteoDeLineas()
+	if valor==0 {
+		t.Errorf("Algúna funcion no empieza por la pabra reservada func")
+	}
+}
