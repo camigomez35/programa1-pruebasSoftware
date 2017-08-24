@@ -2,6 +2,7 @@ package programaDos
 
 import (
 	"testing"
+	"fmt"
 )
 
 func TestVacio(t *testing.T ){
