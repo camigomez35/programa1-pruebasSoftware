@@ -15,3 +15,8 @@ func readFile() (bool,[]string){
 		return false,array
 	}
 }
+
+func encontrarMetodos() []int {
+	var lineas []int
+	return lineas
+}
