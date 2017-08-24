@@ -1,4 +1,4 @@
-package testNilton
+package programaDos
 
 import (
 	"testing"
@@ -18,4 +18,3 @@ func TestRead(t *testing.T){
 		t.Errorf("El archivo no fue correctamente leido o esta vacio")
 	}
 }
-
