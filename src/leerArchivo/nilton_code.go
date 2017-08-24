@@ -28,8 +28,23 @@ func encontrarMetodos() []int {
 	return lineas
 }
 
-func conteoDeLineas() int {
+func conteoDeLineas() (int,[]int) {
 	numeroLineas:=0
-	return numeroLineas
+	var errores []int
+	logico, array:=readFile()
+	arrayLineas:=encontrarMetodos()
+	if logico {
+		for i:=0;i<len(arrayLineas) ;i++  {
+			indice:=strings.Index(array[arrayLineas[i]],"func")
+			if indice!=0 {
+				errores=append(errores,arrayLineas[i])
+			}else {
+				numeroLineas++
+				//numeroLineas:=numeroLineas+contar()
+			}
 
+		}
+	}
+	return numeroLineas, errores
 }
+

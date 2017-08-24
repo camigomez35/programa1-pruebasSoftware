@@ -2,6 +2,7 @@ package programaDos
 
 import (
 	"testing"
+	"strconv"
 )
 
 func TestVacio(t *testing.T ){
@@ -27,8 +28,12 @@ func TestEncontrarMetodos(t *testing.T){
 }
 
 func TestValidarFuncPrimeraPalabra(t *testing.T)  {
-	valor:=conteoDeLineas()
-	if valor==0 {
+	numeroLineas, errores :=conteoDeLineas()
+	if numeroLineas==0 {
 		t.Errorf("Algúna funcion no empieza por la pabra reservada func")
+	}else if(len(errores)>0){
+		for i:=0;i<len(errores);i++  {
+			t.Errorf("la función de la línea "+strconv.Itoa(errores[i])+" no esta acorde al estandar")
+		}
 	}
 }
