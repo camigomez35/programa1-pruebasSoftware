@@ -1,1 +1,8 @@
-Texto de prueba
+func readFile() bool{
+	array:=abrirArchivo2("archivo.txt")
+	if(len(array)>0){
+		return true
+	}else {
+		return false
+	}
+}

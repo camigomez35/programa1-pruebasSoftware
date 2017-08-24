@@ -1,15 +1,17 @@
 package testNilton
 
+import (
+)
 
 func validateCode() string  {
 	return "dsfa"
 }
 
-func readFile() bool  {
-	file:= abrirArchivo("archivo.txt")
-	if file != "" {
-		return true
+func readFile() (bool,[]string){
+	array:=abrirArchivo2("archivo.txt")
+	if(len(array)>0){
+		return true,array
 	}else {
-		return false
+		return false,array
 	}
 }

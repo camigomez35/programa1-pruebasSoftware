@@ -2,19 +2,20 @@ package testNilton
 
 import (
 	"testing"
-	"fmt"
 )
 
 func TestEmpty(t *testing.T ){
 	expected := "dsfa"
 	actual := validateCode()
-	fmt.Println(actual)
-	fmt.Println(expected)
+	if actual!=expected {
+		t.Errorf("valor no esperado")
+	}
 }
 
 func TestRead(t *testing.T){
-	res:=readFile()
-	if res!=true {
-		t.Errorf("Test failed, expected: true, got: false")
+	valor, array:=readFile()
+	if valor!=true && len(array)<=0 {
+		t.Errorf("El archivo no fue correctamente leido o esta vacio")
 	}
 }
+
