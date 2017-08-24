@@ -30,16 +30,22 @@ func encontrarMetodos() []int {
 
 func conteoDeLineas() (int,[]int) {
 	numeroLineas:=0
+	minusculas:="abcdefghijklmnñopqrstuvwxyz"
 	var errores []int
 	logico, array:=readFile()
 	arrayLineas:=encontrarMetodos()
 	if logico {
 		for i:=0;i<len(arrayLineas) ;i++  {
 			indice:=strings.Index(array[arrayLineas[i]],"func")
-			if indice!=0 {
+			substring := array[arrayLineas[i]][strings.IndexAny(array[arrayLineas[i]], " ")+1:len(array[arrayLineas[i]])]
+			primeraLetra := substring[0]
+			if indice!=0 || strings.IndexAny(minusculas,string(primeraLetra))==-1 {
 				errores=append(errores,arrayLineas[i])
 			}else {
 				numeroLineas++
+				//substring[0].IsLower()
+				//numeroLineas++
+
 				//numeroLineas:=numeroLineas+contar()
 			}
 

@@ -1,4 +1,4 @@
-func readFile() bool{
+func ReadFile() bool{
 	array:=abrirArchivo2("archivo.txt")
 	if(len(array)>0){
 		return true

@@ -37,3 +37,14 @@ func TestValidarFuncPrimeraPalabra(t *testing.T)  {
 		}
 	}
 }
+
+func TestValidarMinusculaNombreMetodo(t *testing.T){
+	numeroLineas, errores :=conteoDeLineas()
+	if numeroLineas==0 {
+		t.Errorf("Algúna funcion no empieza por la pabra reservada func")
+	}else if(len(errores)>0){
+		for i:=0;i<len(errores);i++  {
+			t.Errorf("la función de la línea "+strconv.Itoa(errores[i])+" no esta acorde al estandar")
+		}
+	}
+}

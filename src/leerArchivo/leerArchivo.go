@@ -5,6 +5,7 @@ import (
     "os"
 	"bufio"
 	"fmt"
+	"strings"
 )
 
 func abrirArchivo(s_nombreArchivo string) string{
@@ -24,7 +25,7 @@ func abrirArchivo2(nombre string) []string{
 	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanLines)
 	for scanner.Scan() {
-		array = append(array, scanner.Text())
+		array = append(array, strings.Trim(scanner.Text(), " "))
 	}
 	return  array
 }
