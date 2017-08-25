@@ -39,10 +39,19 @@ func conteoDeLineas() (int,[]int) {
 			indice:=strings.Index(array[arrayLineas[i]],"func")
 			substring := array[arrayLineas[i]][strings.IndexAny(array[arrayLineas[i]], " ")+1:len(array[arrayLineas[i]])]
 			primeraLetra := substring[0]
-			if indice!=0 || strings.IndexAny(minusculas,string(primeraLetra))==-1 {
+			substring2 := substring[strings.IndexAny(substring, "("):len(substring)]
+			if indice!=0 || strings.IndexAny(minusculas,string(primeraLetra))==-1 || len(substring2)-1!=strings.IndexAny(substring2,"{") {
 				errores=append(errores,arrayLineas[i])
 			}else {
 				numeroLineas++
+				if strings.IndexAny(substring2[1:len(substring2)],")")==-1{
+					errores=append(errores,arrayLineas[i])
+					break
+				}else {
+
+
+				}
+				//if(==-1)
 				//substring[0].IsLower()
 				//numeroLineas++
 
