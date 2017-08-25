@@ -4,6 +4,7 @@ import (
 	"strings"
 )
 
+
 func validateCode() string  {
 	return "dsfa"
 }
@@ -29,7 +30,7 @@ func encontrarMetodos() []int {
 }
 
 func conteoDeLineas() (int,[]int) {
-	numeroLineas:=0
+	var numeroLineas []int
 	minusculas:="abcdefghijklmnñopqrstuvwxyz"
 	var errores []int
 	logico, array:=readFile()
@@ -43,23 +44,48 @@ func conteoDeLineas() (int,[]int) {
 			if indice!=0 || strings.IndexAny(minusculas,string(primeraLetra))==-1 || len(substring2)-1!=strings.IndexAny(substring2,"{") {
 				errores=append(errores,arrayLineas[i])
 			}else {
-				numeroLineas++
 				if strings.IndexAny(substring2[1:len(substring2)],")")==-1{
 					errores=append(errores,arrayLineas[i])
 					break
 				}else {
-
-
+					substring3 := substring2[strings.IndexAny(substring2, ")")+1:len(substring2)]
+					if(strings.IndexAny(string(substring3[0]),"(")!=-1){
+						retorno:=substring3[1:strings.IndexAny(substring3, ")")]
+						if len(retorno)<=0 {
+							errores=append(errores,arrayLineas[i])
+							break
+						}else {
+							numeroLineas=append(numeroLineas, contar(array, arrayLineas[i]))
+						}
+					}else {
+						numeroLineas=append(numeroLineas, contar(array, arrayLineas[i]))
+					}
 				}
-				//if(==-1)
-				//substring[0].IsLower()
-				//numeroLineas++
-
-				//numeroLineas:=numeroLineas+contar()
 			}
 
 		}
 	}
-	return numeroLineas, errores
+	suma:=0
+	for i:=0;i<len(numeroLineas);i++ {
+		suma=suma+numeroLineas[i]
+	}
+	return suma, errores
+}
+
+func contar(array []string,arrayLineas int) int{
+	resultado:=1
+	contadorDeLlaves:=1
+	i:=arrayLineas+1
+	for contadorDeLlaves>0{
+		resultado++
+		if strings.IndexAny(array[i],"{")!=-1{
+			contadorDeLlaves++
+		}
+		if strings.IndexAny(array[i],"}")!=-1{
+			contadorDeLlaves--
+		}
+		i++
+	}
+	return resultado
 }
 
