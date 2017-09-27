@@ -1,4 +1,4 @@
-package programaDos
+package programa2
 
 import (
 	"testing"
@@ -29,35 +29,41 @@ func TestEncontrarMetodos(t *testing.T){
 }
 
 func TestValidarFuncPrimeraPalabra(t *testing.T)  {
-	numeroLineas, errores :=conteoDeLineas()
+	numeroLineas, errores, numeroMetodos :=conteoDeLineas()
 	if(len(errores)>0){
 		for i:=0;i<len(errores);i++  {
 			t.Errorf("la función de la línea "+strconv.Itoa(errores[i])+" no esta acorde al estandar")
 		}
 	}else {
-		fmt.Println("El numero de lineas es: "+string(numeroLineas))
+		fmt.Println("El numero de lineas es: "+strconv.Itoa(numeroLineas))
+		texto2:="El numero de metodos son:"+strconv.Itoa(numeroMetodos)
+		fmt.Println(texto2)
 	}
 }
 
 func TestValidarMinusculaNombreMetodo(t *testing.T){
-	numeroLineas, errores :=conteoDeLineas()
+	numeroLineas, errores, numeroMetodos :=conteoDeLineas()
 	if(len(errores)>0){
 		for i:=0;i<len(errores);i++  {
 			t.Errorf("la función de la línea "+strconv.Itoa(errores[i])+" no esta acorde al estandar")
 		}
 	}else {
-		fmt.Println("El numero de lineas es: "+string(numeroLineas))
+		fmt.Println("El numero de lineas es: "+strconv.Itoa(numeroLineas))
+		texto2:="El numero de metodos son:"+strconv.Itoa(numeroMetodos)
+		fmt.Println(texto2)
 	}
 }
 
 func TestValidarArgumentos(t *testing.T)  {
-	numeroLineas, errores :=conteoDeLineas()
-	texto:="El numero de lineas es: "+strconv.Itoa(numeroLineas)
+	numeroLineas, errores, numeroMetodos :=conteoDeLineas()
+	texto:="El numero de lineas son: "+strconv.Itoa(numeroLineas)
 	if(len(errores)>0){
 		for i:=0;i<len(errores);i++  {
 			t.Errorf("la función de la línea "+strconv.Itoa(errores[i])+" no esta acorde al estandar")
 		}
 	}else {
-		fmt.Print(texto)
+		fmt.Println(texto)
+		texto2:="El numero de metodos son:"+strconv.Itoa(numeroMetodos)
+		fmt.Println(texto2)
 	}
 }

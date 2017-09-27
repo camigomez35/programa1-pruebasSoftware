@@ -1,7 +1,7 @@
-package programaDos
+package programa2
 
 import (
-	"strings"
+"strings"
 )
 
 
@@ -29,7 +29,7 @@ func encontrarMetodos() []int {
 	return lineas
 }
 
-func conteoDeLineas() (int,[]int) {
+func conteoDeLineas() (int,[]int, int) {
 	var numeroLineas []int
 	minusculas:="abcdefghijklmnñopqrstuvwxyz"
 	var errores []int
@@ -69,7 +69,7 @@ func conteoDeLineas() (int,[]int) {
 	for i:=0;i<len(numeroLineas);i++ {
 		suma=suma+numeroLineas[i]
 	}
-	return suma, errores
+	return suma, errores, len(arrayLineas)
 }
 
 func contar(array []string,arrayLineas int) int{
@@ -88,4 +88,5 @@ func contar(array []string,arrayLineas int) int{
 	}
 	return resultado
 }
+
 
